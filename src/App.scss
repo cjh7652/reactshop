@@ -9,17 +9,17 @@
         background: #F296A0;
         color: #fff;
         z-index: 10;
-       /*   transition: transform 0.4s ease, opacity 0.4s ease; */
+         transition: transform 0.4s ease, opacity 0.4s ease;
         .mySwiper{
             text-align: center;
             line-height: 50px;
         }
     }
-   /*  .popup.hide {
+    .popup.hide {
         transform: translateY(-100%);
         opacity: 0;
-        pointer-events: none;
-    } */
+/*         pointer-events: none; */
+    }
 
     header{
         display: flex;
@@ -33,7 +33,7 @@
         align-items: center;
         height: 70px;
         z-index: 10;
-        /* transition: top 0.4s ease; */
+        transition: top 0.4s ease, background 0.4s ease;
         .headerLeft{
             display: flex;
             
@@ -101,12 +101,62 @@
             }
         }
     }
-    /* header.sticky{
+    header.sticky{
         top:0;
-    } */
+        background: transparent;
+        .headerLeft{
+            h1{
+                a{color: #fff}
+            }
+            nav{
+                ul{
+                    li{
+                        a{
+                            color: #fff;
+                            span{
+                                
+                            }
+                            &.g{
+                                    color: green
+                                }
+                        }
+                    }
+                }
+            }
+        }
+        .headerRight{
+            .gnb{
+                ul{
+                    li{
+                        a{
+                            color: #fff;
+                        }
+                         &:nth-child(1) a{
+                                width: 20px;
+                                height: 20px;
+                                background: url(./img/mypage_w.png) no-repeat center;
+                            }
+                            &:nth-child(2) a{
+                                width: 20px;
+                                height: 20px;
+                                background: url(./img/cart_w.png) no-repeat center bottom;
+                            }
+                            &:nth-child(3) a{
+                                width: 20px;
+                                height: 20px;
+                                background: url(./img/like_w.png) no-repeat center bottom;
+                            }
+                    }
+                }
+            }
+        }
+    }
 }
 .best{
     padding-top: 150px;
+}
+.new{
+     padding-top: 150px;
 }
 .section01title{
     padding: 100px 0;

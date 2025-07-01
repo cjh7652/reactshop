@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import {Routes, Route, Link} from 'react-router-dom';
 import { Swiper, SwiperSlide } from "swiper/react";
-import Main from "./pages/Main"
-import Best from './pages/Best'
+import Main from "./pages/Main";
+import Best from './pages/Best';
+import New from './pages/New';
 import "swiper/css";
 import 'swiper/css/navigation';
 import { Autoplay } from 'swiper/modules';
@@ -43,8 +44,8 @@ function App() {
 				<h1><Link to="/">ATTRANGS</Link></h1>
 				<nav>
 					<ul>
-						<li><Link to="/best" href="#">BEST</Link></li>
-						<li><a href="#" className="g">NEW </a></li>
+						<li><Link to="/best" >BEST</Link></li>
+						<li><Link to="/new" className="g">NEW </Link></li>
 						<li><a href="#">지금여름🌿<span>N</span>  </a></li>
 						<li><a href="#">장마룩☔<span>N</span>  </a></li>
 						<li><a href="#">휴양지룩👗<span>N</span>  </a></li>
@@ -73,6 +74,7 @@ function App() {
 		<Routes>
 			<Route path="/" element={<Main />} />
 			<Route path="/best" element={<Best />} />
+			<Route path="/new" element={<New />} />
 		</Routes>
 		
     </div>
