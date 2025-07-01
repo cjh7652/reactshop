@@ -27,7 +27,7 @@
         top: 50px;
         left:0;
         width: 100%;
-        background: #fff;
+        background: linear-gradient(to bottom, rgba(0,0,0,.4), rgba(0,0,0,0));
         justify-content: space-between;
         padding: 0 30px;
         align-items: center;
@@ -43,7 +43,7 @@
                    font-size: 20px; 
                    font-family: "Noto Sans", sans-serif;
                    font-weight:500;
-                   color:  #5a514b;
+                   color:  #fff;
                    letter-spacing: 5px;
                 }
             }
@@ -57,7 +57,7 @@
                         margin-right: 20px;
                         a{
                             position: relative;
-                            color:#877B83;
+                            color:#fff;
                             span{
                                 position: absolute;
                                 font-size: 12px;
@@ -79,21 +79,21 @@
                     display: flex;
                     li{
                         margin-left: 20px;
-                        a{ color:#877B83; display: inline-block;}
+                        a{ color:#fff; display: inline-block;}
                         &:nth-child(1) a{
                             width: 20px;
                             height: 20px;
-                            background: url(./img/mypage_w_g.png) no-repeat center;
+                            background: url(./img/mypage_w.png) no-repeat center;
                         }
                         &:nth-child(2) a{
                             width: 20px;
                             height: 20px;
-                            background: url(./img/cart_w_g.png) no-repeat center bottom;
+                            background: url(./img/cart_w.png) no-repeat center bottom;
                         }
                         &:nth-child(3) a{
                             width: 20px;
                             height: 20px;
-                            background: url(./img/like_w_g.png) no-repeat center bottom;
+                            background: url(./img/like_w.png) no-repeat center bottom;
                         }
                         
                     }
@@ -103,16 +103,16 @@
     }
     header.sticky{
         top:0;
-        background: transparent;
+        background: #fff;
         .headerLeft{
             h1{
-                a{color: #fff}
+                a{color: #5a514b;}
             }
             nav{
                 ul{
                     li{
                         a{
-                            color: #fff;
+                            color: #877b73;
                             span{
                                 
                             }
@@ -129,22 +129,22 @@
                 ul{
                     li{
                         a{
-                            color: #fff;
+                            color: #877b73;
                         }
                          &:nth-child(1) a{
                             width: 20px;
                             height: 20px;
-                            background: url(./img/mypage_w.png) no-repeat center;
+                            background: url(./img/mypage_w_g.png) no-repeat center;
                         }
                         &:nth-child(2) a{
                             width: 20px;
                             height: 20px;
-                            background: url(./img/cart_w.png) no-repeat center bottom;
+                            background: url(./img/cart_w_g.png) no-repeat center bottom;
                         }
                         &:nth-child(3) a{
                             width: 20px;
                             height: 20px;
-                            background: url(./img/like_w.png) no-repeat center bottom;
+                            background: url(./img/like_w_g.png) no-repeat center bottom;
                         }
                     }
                 }
@@ -231,4 +231,108 @@
     font-size: 0;
     line-height: 0;
     overflow: hidden;
+}
+
+.summer{
+    margin: 50px;
+    h2{
+        font-size: 15px;
+        color: #9a9696;
+        text-align: center;
+        margin-bottom:10px;
+        font-weight: 400;
+    }
+    h3{
+        font-size: 23px;
+        color: #333;
+        text-align: center;
+        margin-bottom:10px;
+        font-weight: 400;
+    }
+    .summerLists{
+        width: 1416px;
+        margin: 50px auto;
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            li{
+                width: 20%;
+                
+                 padding: 0 10px;
+                box-sizing: border-box; 
+                margin-bottom: 30px;
+
+                img{
+                    width: 100%
+                }
+                .textbox{
+                    background: #fff;
+                    .priceWrap{
+                        margin: 10px 0;
+                        .sale{
+                            color: #fda8c2;
+                            font-size: 20px;
+                            letter-spacing: -1px;
+                        }
+                        .price{
+                            font-size: 15px;
+                            color: #877b73;
+                            text-decoration: line-through;
+                            margin: 0 10px;
+                        }
+                        .discount{
+                            font-weight: 700;
+                        }
+                    }
+                    .title{
+                        font-size: 15px;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }
+                    .descript{
+                        font-size: 15px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;  /* 2줄 넘어가면 말줄임 */
+                        -webkit-box-orient: vertical;
+                        color: #877b73;
+                        margin: 10px 0;
+
+                    }
+                    .company{
+                        font-size: 14px;
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer{
+    height: 300px;
+    border-top: 1px solid #c7c7c7;
+
+    .footerTop{
+        height: 200px;
+    }
+    .footerNav{
+        height: 100px;
+        border-top: 1px solid #c7c7c7;
+        width: 100%;
+        padding: 0 50px;
+        box-sizing: border-box;
+        display: flex;
+        .footernav{
+            width: 1410px;
+            margin: 0 auto;
+            ul{ display: flex;
+                li{
+                    a{font-weight: 700;}
+                }
+            }
+        }
+    }
 }

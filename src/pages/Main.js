@@ -20,25 +20,29 @@ const Main = () => {
 				</Swiper>
 			</section>
 			<SectionTitle></SectionTitle>
-			<section className="summe">
+			<section className="summer">
 				<h2>지금여름🌿</h2>
 				<h3>설레는 여름</h3>
 
 				<div className="summerLists">
 					<ul>
-						<li>
-							<img src={process.env.PUBLIC_URL + shopping[0].img} alt="" />
-							<div className="textbox">
-								<div className="priceWrap">
-									<span className="sale">{shopping[0].sale}</span>
-									<span className="price">{shopping[0].price}</span>
-									<span className="discount">{shopping[0].discount}</span>
-								</div>
-								<div className="title">{shopping[0].title}</div>
-								<div className="descript">{shopping[0].descript}</div>
-								<div className="company">{shopping[0].company}</div>
-							</div>
-						</li>
+						{
+							shopping.map((item, index) => (
+								<li key={index}>
+									<img src={process.env.PUBLIC_URL + item.img} alt="" />
+									<div className="textbox">
+										<div className="priceWrap">
+											<span className="sale">{shopping[index].sale}</span>
+											<span className="price">{shopping[index].price}</span>
+											<span className="discount">{shopping[index].discount}</span>
+										</div>
+										<div className="title">{shopping[index].title}</div>
+										<div className="descript">{shopping[index].description}</div>
+										<div className="company">{shopping[index].company}</div>
+									</div>
+								</li>
+							))
+						}
 					</ul>
 				</div>
 			</section>
