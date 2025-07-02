@@ -1,15 +1,14 @@
-import React,{useState} from 'react';
+import React from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import SectionTitle from "../components/SectionTitle";
 import "swiper/css";
 import 'swiper/css/navigation';
-/* import data from '../data/data'; */
 import {  Navigation } from 'swiper/modules';
 import { Link } from 'react-router-dom';
-/* import Detail from './Detail'; */
+
 
 const Main = ({shopping}) => {
-	/* let [shopping] =useState(data)  */
+	
     return (
         <main>
 			<section className="mainSlide">
@@ -30,18 +29,18 @@ const Main = ({shopping}) => {
 					<ul>
 						{
 							shopping.map((item, index) => (
-								<li key={index}>
+								<li key={item.id}>
 									<Link to={`/detail/${item.id}`}>
 										<img src={process.env.PUBLIC_URL + item.img} alt="" />
 										<div className="textbox">
 											<div className="priceWrap">
-												<span className="sale">{shopping[index].sale}</span>
-												<span className="price">{shopping[index].price}</span>
-												<span className="discount">{shopping[index].discount}</span>
+												<span className="sale">{item.sale}</span>
+												<span className="price">{item.price}</span>
+												<span className="discount">{item.discount}</span>
 											</div>
-											<div className="title">{shopping[index].title}</div>
-											<div className="descript">{shopping[index].description}</div>
-											<div className="company">{shopping[index].company}</div>
+											<div className="title">{item.title}</div>
+											<div className="descript">{item.description}</div>
+											<div className="company">{item.company}</div>
 										</div>
 									</Link>
 								</li>
