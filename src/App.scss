@@ -312,25 +312,142 @@
 }
 
 .footer{
-    height: 300px;
     border-top: 1px solid #c7c7c7;
+    padding: 50px 0;
 
     .footerTop{
-        height: 200px;
+        
+        width: 100%;
+        max-width: 1410px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        >div{
+            .tit{
+                font-size: 14px;
+                margin: 10px 0;
+                font-weight: 700;
+            }
+            p{
+                font-size: 12px;
+                color: #999;
+                line-height: 200%;
+                &.b{
+                    color: #000;
+                    margin-top: 10px;
+                }
+                &.pmargin{
+                    margin: 10px 0 20px 0 ;
+                }
+            }
+            img{
+                border-radius: 20px;
+                margin: 20px 0;
+                width: 270px;
+            }
+            .naver, .kakao{
+                padding: 8px 15px;
+                width: 280px;
+                border: 1px solid #eee;
+                margin-top: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 8px;
+            }
+            .kakao{
+                span{
+                    font-size: 12px;
+                    color: #333;
+                    font-weight: 700;
+                }
+                .k{
+                    display: inline-block;
+                    width: 35px;
+                    height: 35px;
+                    background: url(./img/main_icon_pc.png) no-repeat -308px -407px;
+                    margin-right: 5px;
+                }
+                
+            }
+            .naver{
+                span{
+                    font-size: 12px;
+                    color: #333;
+                    font-weight: 700;
+                }
+                .n{
+                    display: inline-block;
+                    width: 35px;
+                    height: 35px;
+                    background: url(./img/main_icon_pc.png) no-repeat -349px -407px;
+                      margin-right: 5px;
+                }
+                
+            }
+            ul{
+                 display: flex;
+                li{
+                   
+                    a{
+                        display: inline-block;
+                        width: 35px;
+                        height: 35px;
+                        background: url(./img/main_icon_pc.png) no-repeat;
+                    }
+                    &.i a{
+                        background-position: -305px -453px;
+                    }
+                    &.f a{
+                        background-position: -343px -453px;
+                    }
+                    &.y a{
+                        background-position: -383px -453px;
+                    }
+                    &.c a{
+                        background-position: -421px -453px;
+                    }
+                }
+                
+            }
+        }
+    }
+    .footerBot{
+        width: 100%;
+        border-top: 1px solid #c7c7c7;
+         height: 100px;
     }
     .footerNav{
-        height: 100px;
-        border-top: 1px solid #c7c7c7;
         width: 100%;
-        padding: 0 50px;
+        max-width: 1410px;
+       
+        padding:30px 50px;
         box-sizing: border-box;
         display: flex;
-        .footernav{
-            width: 1410px;
-            margin: 0 auto;
+         margin: 0 auto;
+         justify-content: space-between;
+         align-items: center;
+        .footernav{           
             ul{ display: flex;
+                align-items: center;
+                li{margin-right: 20px;
+                    a{
+                        font-weight: 700;
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+        .footerImgs{
+            ul{
+                display: flex;
+                align-items: center;
                 li{
-                    a{font-weight: 700;}
+                    margin-left: 20px;
+                    a{
+                        font-size: 14px;
+                        color: #d7d7d7;
+                    }
                 }
             }
         }

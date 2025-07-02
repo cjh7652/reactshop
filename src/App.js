@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import {Routes, Route, Link} from 'react-router-dom';
 import { Swiper, SwiperSlide } from "swiper/react";
+import data from './data/data';
 import Main from "./pages/Main";
 import Best from './pages/Best';
 import New from './pages/New';
+import Detail from './pages/Detail';
 import Footer from './components/Footer';
 import "swiper/css";
 import 'swiper/css/navigation';
@@ -14,6 +16,7 @@ import './App.scss';
 
 
 function App() {
+	const [shopping] = useState(data);
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [isHeaderWhite, setIsHeaderWhite] = useState(false); // ← NEW 클릭 여부
 	useEffect(() => {
@@ -73,9 +76,10 @@ function App() {
 			</div>
 		</header>
 		<Routes>
-			<Route path="/" element={<Main />} />
+			<Route path="/" element={<Main shopping={shopping} />} />
 			<Route path="/best" element={<Best />} />
 			<Route path="/new" element={<New />} />
+			<Route path="/detail/:id" element={<Detail  shopping={shopping} />} />
 		</Routes>
 		<Footer />
     </div>
