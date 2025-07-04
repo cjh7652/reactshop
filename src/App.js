@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef} from 'react';
 import {Routes, Route, Link} from 'react-router-dom';
 import { Swiper, SwiperSlide } from "swiper/react";
 import data from './data/data';
 import Main from "./pages/Main";
 import Best from './pages/Best';
 import New from './pages/New';
+import Login from "./pages/Login";
 import Detail from './pages/Detail';
 import Footer from './components/Footer';
+import Side from './components/Side';
 import "swiper/css";
 import 'swiper/css/navigation';
 import { Autoplay } from 'swiper/modules';
@@ -16,6 +18,7 @@ import './App.scss';
 
 
 function App() {
+	const scrollContainerRef=useRef(null)
 	const [shopping] = useState(data);
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [isHeaderWhite, setIsHeaderWhite] = useState(false); // ← NEW 클릭 여부
@@ -30,7 +33,7 @@ function App() {
 	}, []);
 
   return (
-    <div className="App">
+    <div className="App" ref={scrollContainerRef} >
 		<div  className={`popup ${isScrolled ? 'hide' : ''}`}>
 			<Swiper 
 			modules={[Autoplay]}
@@ -70,7 +73,7 @@ function App() {
 						<li><a href="#"></a></li>
 						<li><a href="#"></a></li>
 						<li><a href="#"></a></li>
-						<li><a href="#">로그인</a></li>
+						<li><Link to="/login">로그인</Link></li>
 					</ul>
 				</div>
 			</div>
@@ -80,8 +83,10 @@ function App() {
 			<Route path="/best" element={<Best />} />
 			<Route path="/new" element={<New />} />
 			<Route path="/detail/:id" element={<Detail  shopping={shopping} />} />
+			<Route path="/login" element={<Login />} />
 		</Routes>
 		<Footer />
+		<Side scrollRef={scrollContainerRef}/>
     </div>
   );
 }
