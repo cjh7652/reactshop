@@ -1,13 +1,23 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import SectionTitle from "../components/SectionTitle";
 import "swiper/css";
 import 'swiper/css/navigation';
-import {  Navigation } from 'swiper/modules';
+import 'swiper/css/pagination';
+import {  Navigation, Pagination, Autoplay  } from 'swiper/modules';
 import { Link } from 'react-router-dom';
 
 
 const Main = ({shopping}) => {
+	const tabList = ['#자체제작', '#바지맛집', '#지금여름🌿', '#하객룩'];
+	const [activeTab, setActiveTab] = useState(tabList[0]);
+
+	const tabImages = {
+  '#지금여름🌿': Array.from({ length: 10 }, (_, i) => `/img/summer/summer${String(i + 1).padStart(2, '0')}.gif`),
+  '#바지맛집': Array.from({ length: 8 }, (_, i) => `/img/pants/pants${String(i + 1).padStart(2, '0')}.gif`),
+  '#자체제작': Array.from({ length: 10 }, (_, i) => `/img/self/self${i + 1}.gif`),
+  '#하객룩': Array.from({ length: 5 }, (_, i) => `/img/guest/guest${String(i + 1).padStart(2, '0')}.gif`),
+};
 	
     return (
         <main>
@@ -48,6 +58,47 @@ const Main = ({shopping}) => {
 						}
 					</ul>
 				</div>
+			</section>
+			<section className="season">
+				<h2>지금이 딱이야</h2>
+				<h3>#우리들의 계절</h3>
+
+				 <div className="tabs-container">
+					<div className="tab-buttons">
+						{tabList.map((tab) => (
+						<button
+							key={tab}
+							onClick={() => setActiveTab(tab)}
+							className={`tab-button ${activeTab === tab ? 'active' : ''}`}
+						>
+							{tab}
+						</button>
+						))}
+					</div>
+
+					<div className="tab-content">
+						<Swiper
+						modules={[Navigation, Pagination, Autoplay]}
+						spaceBetween={20}
+						slidesPerView={3}
+						navigation
+						pagination={{ clickable: true }}
+						autoplay={{ delay: 3000 }}
+						breakpoints={{
+							640: { slidesPerView: 2 },
+							768: { slidesPerView: 3 },
+							1024: { slidesPerView: 4 },
+						}}
+						>
+						{tabImages[activeTab].map((img, index) => (
+							<SwiperSlide key={index}>
+							<img src={img} alt={`Slide ${index}`} className="slide-img" />
+							</SwiperSlide>
+						))}
+						</Swiper>
+					</div>
+				</div>
+
 			</section>
 		</main>
     );
