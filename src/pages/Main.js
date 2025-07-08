@@ -9,14 +9,14 @@ import { Link } from 'react-router-dom';
 
 
 const Main = ({shopping}) => {
-	const tabList = ['#자체제작', '#바지맛집', '#지금여름🌿', '#하객룩'];
+	const tabList = ['#자체제작', '#바지맛집', '#지금여름🌿'/* , '#하객룩' */];
 	const [activeTab, setActiveTab] = useState(tabList[0]);
 
 	const tabImages = {
-  '#지금여름🌿': Array.from({ length: 10 }, (_, i) => `/img/summer/summer${String(i + 1).padStart(2, '0')}.gif`),
-  '#바지맛집': Array.from({ length: 8 }, (_, i) => `/img/pants/pants${String(i + 1).padStart(2, '0')}.gif`),
-  '#자체제작': Array.from({ length: 10 }, (_, i) => `/img/self/self${i + 1}.gif`),
-  '#하객룩': Array.from({ length: 5 }, (_, i) => `/img/guest/guest${String(i + 1).padStart(2, '0')}.gif`),
+		'#지금여름🌿': Array.from({ length: 10 }, (_, i) => `/img/summer/summer${String(i + 1).padStart(2, '0')}.gif`),
+		'#바지맛집': Array.from({ length: 8 }, (_, i) => `/img/pants/pants${String(i + 1).padStart(2, '0')}.gif`),
+		'#자체제작': Array.from({ length: 10 }, (_, i) => `/img/self/self${i + 1}.gif`),
+ 
 };
 	
     return (
